@@ -1,0 +1,58 @@
+ion-content {
+    --background: url('../../assets/re_material/Fondo\ Felia.jpeg') no-repeat center center / cover;
+    display: flex;
+    align-items: center; /* Centra verticalmente*/
+    justify-content: center; /* Centra horizontalmente */
+  }
+  
+  .centered-div {
+    width: 80%; /* Ajusta el ancho según sea necesario */
+    height: 80%; /* Ajusta la altura según sea necesario */
+    background-color: #00000096; /* Fondo semitransparente para destacar sobre la imagen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 10% auto; /* Ajusta el margen superior para separar el div del borde superior */
+    backdrop-filter: blur(10px); /* Aplica un desenfoque al fondo detrás del div */
+    
+    /* Bordes redondeados */
+    border-radius: 45px; 
+    
+    /* Iniciar la animación de sombras */
+    animation: shadow-animation 7s infinite linear; /* Animar sombras en un bucle infinito */
+  }
+  
+  @keyframes shadow-animation {
+    0% {
+      box-shadow: 
+        10px 10px 20px #ff0000,  
+        -10px -10px 20px #00ffff, 
+        10px -10px 20px #ffffff; 
+    }
+    25% {
+      box-shadow: 
+        -10px 10px 20px #ff0000,  
+        10px -10px 20px #00ffff,
+        -10px -10px 20px #ffffff;
+    }
+    50% {
+      box-shadow: 
+        -10px -10px 20px #ff0000,  
+        -10px 10px 20px #00ffff, 
+        10px 10px 20px #ffffff;
+    }
+    75% {
+      box-shadow: 
+        10px -10px 20px #ff0000,  
+        -10px -10px 20px #00ffff, 
+        -10px 10px 20px #ffffff; 
+    }
+    100% {
+      box-shadow: 
+        10px 10px 20px #ff0000,  
+        -10px -10px 20px #00ffff, 
+        10px -10px 20px #ffffff; 
+    }
+  }
+  
