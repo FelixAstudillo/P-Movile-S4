@@ -1,0 +1,65 @@
+
+<ion-content fullscreen>
+
+
+
+
+<!-------------------------EL GRAN DIV--------------------------->
+<div class="centered-div">
+  <div class="form-container">
+
+    <!---------------------- ATRAS ------------------------------------>
+    <ion-back-button class="back-button" defaultHref="ln">
+    <ion-icon name="arrow-back"></ion-icon> </ion-back-button>
+    <!---------------------- ATRAS ------------------------------------>
+
+    <!------------------------ T REGISTRAR ---------------------------->
+    <P class="shiny-text"> INICIAR SESION </P>
+    <!------------------------ T REGISTRAR ---------------------------->
+
+    
+    <!-------------------------CAMPOS DE TEXTO------------------------->
+    <div class="form-control">
+      <input type="email" required="" [(ngModel)]="email" >
+      <label>
+          <span style="transition-delay:0ms">E</span>
+          <span style="transition-delay:50ms">M</span>
+          <span style="transition-delay:100ms">A</span>
+          <span style="transition-delay:150ms">I</span>
+          <span style="transition-delay:200ms">L</span>
+      </label>
+    </div>
+    <!---->
+    <div class="form-control">
+      <input type="password" required="" [(ngModel)]="password" >
+      <label>
+          <span style="transition-delay:0ms">C</span>
+          <span style="transition-delay:50ms">O</span>
+          <span style="transition-delay:100ms">N</span>
+          <span style="transition-delay:150ms">T</span>
+          <span style="transition-delay:200ms">R</span>
+          <span style="transition-delay:250ms">A</span>
+          <span style="transition-delay:300ms">S</span>
+          <span style="transition-delay:350ms">E</span>
+          <span style="transition-delay:400ms">Ñ</span>
+          <span style="transition-delay:450ms">A</span>
+      </label>
+    </div>
+    <!-------------------------CAMPOS DE TEXTO------------------------->
+
+
+  </div>
+</div>
+<!-------------------------EL GRAN DIV--------------------------->
+
+
+
+
+<!-------------------------BOTON TODO LISTO--------------------------->
+<button (click)="ingresar()" > TODO LISTO </button>
+<!-------------------------BOTON TODO LISTO--------------------------->
+
+
+
+  
+</ion-content>
