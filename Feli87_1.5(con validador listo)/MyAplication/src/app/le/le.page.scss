@@ -1,0 +1,282 @@
+/////////////////////////////////////////////////// FONDO ///////////////////////////////////////////////////////
+ion-content {
+  --background: url('../../assets/re_material/Fondo\ Felia.jpeg') no-repeat center center / cover;
+  display: flex;
+  align-items: center; /* Centra verticalmente*/
+  justify-content: center; /* Centra horizontalmente */
+}
+/////////////////////////////////////////////////// FONDO ///////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+//////////////////////////////////////////// BACK ///////////////////////////////////////////////////////////////
+.back-button {
+  background: none;
+  border: none;
+  color: #00ffff;
+  position: absolute;
+  top: 0; 
+  left: 0;
+  display: flex; 
+  gap: 0.5px;
+  filter: drop-shadow(0px 4px 6px #ffffff);
+  font-size: 18px; /* Tamaño del texto */
+  padding: 25px; 
+}
+//////////////////////////////////////////// BACK ///////////////////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////////////////// T INICIAR SESION //////////////////////////////////////////////////
+.shiny-text {
+  font-size: 3rem;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  background: linear-gradient(100deg, #5c5c5c, #ffffff);
+  background-size: 900% 100%;
+  animation: shiny 15s infinite linear;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes shiny {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+/////////////////////////////////////////////// T INICIAR SESION //////////////////////////////////////////////////
+
+
+
+
+
+
+/////////////////////////////////////////// CAMPOS DE TEXTO ///////////////////////////////////////////////////
+.form-control {
+  position: relative;
+  margin: 50px;
+  width: 300px;
+}
+
+.form-control input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 3px #ff0000 solid;
+  display: block;
+  width: 100%;
+  padding: 8px;
+  font-size: 30px;
+  color: #ffffff;
+}
+
+.form-control input:focus,
+.form-control input:valid {
+  outline: 0;
+  border-bottom-color: #00ffff;
+}
+
+.form-control label {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  pointer-events: none;
+}
+
+.form-control label span {
+  display: inline-block;
+  font-size: 18px;
+  min-width: 5px;
+  color: #ffffff;
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-control input:focus+label span,
+.form-control input:valid+label span {
+  color: #00ffff;
+  transform: translateY(-30px);
+}
+/////////////////////////////////////////// CAMPOS DE TEXTO ///////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+//////////////////////////////////////////// OLVIDE MI PASSWORD //////////////////////////////////////////////////
+
+.change_password {
+ --hover-shadows: 16px 16px 33px #121212, -16px -16px 33px #303030;
+ --accent: rgb(185, 0, 0);
+ font-weight: bold;
+ letter-spacing: 0.1em;
+ border-radius: 10em;
+ background-color: #00000000;
+ color: #ffffffbe;
+ padding: 1em 1em;
+ transition: box-shadow ease-in-out 0.1s, background-color ease-in-out 0.1s,
+ letter-spacing ease-in-out 0.1s, transform ease-in-out 0.1s;
+}
+
+
+.change_password:active {
+  box-shadow: var(--hover-shadows), var(--accent) 0px 0px 30px 5px;
+  background-color: var(--accent);
+  transform: scale(0.95);
+}
+
+ //////////////////////////////////////////// OLVIDE MI PASSWORD //////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+/////////////////////////////////////////// BOTON TODO LISTO /////////////////////////////////////////////////
+.ingresar {
+  --glow-color: #00ffff;
+  --glow-spread-color: #ffffffa4;
+  --btn-color: #000000b2;
+  border: .25em solid var(--glow-color);
+  padding: 1em 4em;
+  color: var(--glow-color);
+  font-size: 20px;
+  font-weight: bold;
+  background-color: var(--btn-color);
+  border-radius: 1em;
+  outline: none;
+  box-shadow: 0 0 1em .25em var(--glow-color),
+              0 0 4em 1em var(--glow-spread-color),
+              inset 0 0 .75em .25em var(--glow-color);
+  text-shadow: 0 0 .5em var(--glow-color);
+  transition: all 0.3s;
+  /*Centrado horizontal:*/
+  display: block;
+  margin: 0 auto;
+}
+
+.ingresar:hover {
+  color: var(--btn-color);
+  background-color: var(--glow-color);
+  box-shadow: 0 0 1em .25em var(--glow-color),
+              0 0 4em 2em var(--glow-spread-color),
+              inset 0 0 .75em .25em var(--glow-color);
+}
+
+.ingresar:active {
+  box-shadow: 0 0 0.6em .25em var(--glow-color),
+              0 0 2.5em 2em var(--glow-spread-color),
+              inset 0 0 .5em .25em var(--glow-color);
+}
+/////////////////////////////////////////// BOTON TODO LISTO /////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////////// EL GRAN DIV /////////////////////////////////////////////////////
+
+.centered-div {
+  width: 80%; /* Ajusta el ancho según sea necesario */
+  height: 80%; /* Ajusta la altura según sea necesario */
+  background-color: #00000096; /* Fondo semitransparente para destacar sobre la imagen */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 4% auto; /* Ajusta el margen superior para separar el div del borde superior */
+  backdrop-filter: blur(10px); /* Aplica un desenfoque al fondo detrás del div */
+  
+  /* Bordes redondeados */
+  border-radius: 45px; 
+  
+  /* Iniciar la animación de sombras */
+  animation: shadow-animation 2s infinite linear; /* Animar sombras en un bucle infinito */
+}
+
+@keyframes shadow-animation {
+  0% {
+    box-shadow: 
+      10px 10px 20px #ff0000,  
+      -10px -10px 20px #00ffff, 
+      10px -10px 20px #ffffff; 
+  }
+  25% {
+    box-shadow: 
+      -10px 10px 20px #ff0000,  
+      10px -10px 20px #00ffff,
+      -10px -10px 20px #ffffff;
+  }
+  50% {
+    box-shadow: 
+      -10px -10px 20px #ff0000,  
+      -10px 10px 20px #00ffff, 
+      10px 10px 20px #ffffff;
+  }
+  75% {
+    box-shadow: 
+      10px -10px 20px #ff0000,  
+      -10px -10px 20px #00ffff, 
+      -10px 10px 20px #ffffff; 
+  }
+  100% {
+    box-shadow: 
+      10px 10px 20px #ff0000,  
+      -10px -10px 20px #00ffff, 
+      10px -10px 20px #ffffff; 
+  }
+}
+///////////////////////////////////////////// EL GRAN DIV /////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
