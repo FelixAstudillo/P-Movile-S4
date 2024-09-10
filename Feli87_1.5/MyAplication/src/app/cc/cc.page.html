@@ -1,0 +1,57 @@
+
+
+
+<ion-content fullscreen>
+
+
+
+
+  <!-------------------------EL GRAN DIV--------------------------->
+  <div class="centered-div">
+    <div class="form-container">
+  
+      <!---------------------- ATRAS ------------------------------------>
+      <ion-back-button class="back-button" defaultHref="ln">
+      <ion-icon name="arrow-back"></ion-icon> </ion-back-button>
+      <!---------------------- ATRAS ------------------------------------>    
+  
+      <!------------------------ CAMBIAR PASSWORD ---------------------------->
+      <P class="shiny-text"> CAMBIAR CONTRASEÑA </P>
+      <!------------------------ CAMBIAR PASSWORD ---------------------------->
+      <!------------------------ DESCRIPCION --------------------------------->
+      <p class="description_cc"> Ingresa tu correo electrónico para recibir un codigo de verificación que te dará acceso a tu cambio de contraseña </p>
+      <!------------------------ DESCRIPCION --------------------------------->
+      
+      <!-------------------------CAMPOS DE TEXTO------------------------->
+      <div class="form-control"> 
+        <input type="email" required="" [(ngModel)]="email" >
+        <label>
+            <span style="transition-delay:0ms">E</span>
+            <span style="transition-delay:50ms">M</span>
+            <span style="transition-delay:100ms">A</span>
+            <span style="transition-delay:150ms">I</span>
+            <span style="transition-delay:200ms">L</span>
+        </label>
+      </div>
+      <!-------------------------CAMPOS DE TEXTO------------------------->
+  
+
+    </div>
+  </div>
+  <!-------------------------EL GRAN DIV--------------------------->
+  
+  
+  
+  
+  <!-------------------------BOTON TODO LISTO--------------------------->
+  <button class="listo" (click)="ingresar()" > INGRESAR </button>
+  <!-------------------------BOTON TODO LISTO--------------------------->
+  
+  
+  
+    
+</ion-content>
+
+  
+  
+
