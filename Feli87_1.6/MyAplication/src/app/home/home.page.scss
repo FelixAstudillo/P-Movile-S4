@@ -1,0 +1,363 @@
+////////////////////////AJUSTES DE PAGINA/////////////////////////////////////
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+  overflow: hidden; /* Evitar barras de desplazamiento */
+}
+////////////////////////AJUSTES DE PAGINA/////////////////////////////////////
+
+
+
+
+
+
+//////////////////////BARRA SUPERIOR///////////////////////////
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px; /* Bordes redondeados */
+  height: 60px;
+  width: 98%; /* Ajusta el ancho según sea necesario */
+  margin: 1% auto; /* Ajusta el margen superior para separar el div del borde superior */
+
+  border-radius: 15px; 
+  
+  /* Iniciar la animación de sombras */
+  animation: shadow-animation 10s infinite linear; /* Animar sombras en un bucle infinito */
+}
+//////////////////////BARRA SUPERIOR///////////////////////////
+
+
+/////////////////// MENU ////////////////////////////
+.menu-icon button {
+  background-color: red;
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 10px;
+  border-radius: 10px;
+}
+/////////////////// MENU ////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///////// PAGINAS ///////////////////////////
+.PAG1, .PAG2, .PAG3 {
+  font-size: 1;
+  font-weight: bold;
+  position: relative;
+//  padding: 0 25px;
+  background: linear-gradient(100deg, #5c5c5c, #ffffff);
+  background-size: 700% 100%;
+  animation: shiny 18s infinite linear;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  margin-right: 30px;
+}
+
+
+@keyframes shiny {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+///////// PAGINAS ///////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////
+
+
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+//////// FONDO LUNA //////////////////////
+.slider {
+  --background: #000000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--background);
+  transition: 1.5s;
+  border-radius: 30px;
+}
+//////// FONDO LUNA //////////////////////
+
+
+
+
+///////////// LUNA ////////////////////////
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 50%;
+  left: 10%;
+  bottom: 15%;
+  box-shadow: inset 8px -4px 0px 0px #00d0ff;
+  background: var(--background);
+  transition: .5s;
+}
+///////////// LUNA ////////////////////////
+///////////// FONDO DE SOL ////////////////
+input:checked + .slider {
+  background-color: #ffffff;
+}
+///////////// FONDO DE SOL ////////////////
+///////////// SOL /////////////////////////
+input:checked + .slider:before {
+  transform: translateX(100%);
+  box-shadow: inset 15px -4px 0px 15px #fff700;
+}
+///////////// SOL /////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//////////////BOTONES CIRCULARES/////////////////////////////////////
+.circle {
+  width: 200px;
+  height: 200px;
+  background-color: #b084f7; /* Color de fondo similar al de la imagen */
+  border-radius: 50%; /* Hace los elementos circulares */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+///////////////// B DEL CENTRO //////////////////////////////////////
+.circle.center {
+  width: 170px;
+  height: 170px;
+  background-color: rgb(255, 255, 255); /* Fondo negro para el botón central */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); /* Centra horizontalmente */
+  bottom: -40px; /* Mueve el círculo hacia abajo, sobresaliendo */
+  z-index: 2; /* Asegura que el círculo central esté sobre los otros */
+}
+///////////////// B DEL CENTRO //////////////////////////////////////
+
+
+
+////////////// B IZQUIERDO ///////////////////////////////////////////
+.circle.left {
+  width: 270px;
+  height: 270px;
+  background-color: #00fff0; /* Color igual para los círculos laterales */
+  position: absolute; /* Permite el posicionamiento exacto */
+  bottom: -130px; /* Parte inferior del círculo sobresale parcialmente */
+  z-index: 1;
+  left: -80px; /* Mueve el círculo izquierdo fuera de la pantalla parcialmente */
+  
+}
+////////////// B IZQUIERDO ///////////////////////////////////////////
+
+////////////// B DERECHO ////////////////////////////////////////////
+.circle.right {
+  width: 270px;
+  height: 270px;
+  background-color: #ff0000; /* Color igual para los círculos laterales */
+  position: absolute; /* Permite el posicionamiento exacto */
+  bottom: -130px; /* Parte inferior del círculo sobresale parcialmente */
+  z-index: 1;
+  right: -80px; /* Mueve el círculo derecho fuera de la pantalla parcialmente */
+  
+}
+////////////// B DERECHO ////////////////////////////////////////////
+
+
+///////////// EMOJI B ///////////////////////////////////////////////
+.arrow-button, .center-button {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+}
+
+.arrow {
+  font-size: 40px; /* Tamaño de las flechas */
+  color: white; /* Color de las flechas */
+  position: absolute;
+  top: 93%; /* Centra verticalmente las flechas */ 
+  transform: translateY(-50%); 
+  z-index: 3; /* Asegura que el círculo central esté sobre los otros */
+}
+
+
+.left-arrow {
+  left: 40px; /* Posición inicial de la flecha izquierda */
+  font-size: 70px; /* Reducir tamaño de las flechas en pantallas pequeñas */
+}
+
+.right-arrow {
+  right: 40px; /* Posición inicial de la flecha derecha */
+  font-size: 70px; /* Reducir tamaño de las flechas en pantallas pequeñas */
+}
+///////////// EMOJI B ///////////////////////////////////////////////
+//////////////BOTONES CIRCULARES/////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////////// EL GRAN DIV /////////////////////////////////////////////////////
+
+.centered-div{
+  width: 98%; /* Ajusta el ancho según sea necesario */
+  height: 85%; /* Ajusta la altura según sea necesario */
+  background-color: #16121296; /* Fondo semitransparente para destacar sobre la imagen */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 4% auto; /* Ajusta el margen superior para separar el div del borde superior */
+  backdrop-filter: blur(10px); /* Aplica un desenfoque al fondo detrás del div */
+
+  /* Bordes redondeados */
+  border-radius: 10px; 
+  
+  /* Iniciar la animación de sombras */
+  animation: shadow-animation 15s infinite linear; /* Animar sombras en un bucle infinito */
+}
+
+@keyframes shadow-animation {
+  0% {
+    box-shadow: 
+      10px 10px 20px #ff0000,  
+      -10px -10px 20px #00ffff, 
+      10px -10px 20px #ffffff; 
+  }
+  25% {
+    box-shadow: 
+      -10px 10px 20px #ff0000,  
+      10px -10px 20px #00ffff,
+      -10px -10px 20px #ffffff;
+  }
+  50% {
+    box-shadow: 
+      -10px -10px 20px #ff0000,  
+      -10px 10px 20px #00ffff, 
+      10px 10px 20px #ffffff;
+  }
+  75% {
+    box-shadow: 
+      10px -10px 20px #ff0000,  
+      -10px -10px 20px #00ffff, 
+      -10px 10px 20px #ffffff; 
+  }
+  100% {
+    box-shadow: 
+      10px 10px 20px #ff0000,  
+      -10px -10px 20px #00ffff, 
+      10px -10px 20px #ffffff; 
+  }
+}
+///////////////////////////////////////////// EL GRAN DIV /////////////////////////////////////////////////////
+
+
+
+
