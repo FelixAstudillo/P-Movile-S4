@@ -1,86 +1,63 @@
 <ion-content fullscreen>
-
-
-<!-------------------------EL GRAN DIV--------------------------->
+  <!-------------------------EL GRAN DIV--------------------------->
   <div class="centered-div">
     <div class="form-container">
 
-      
       <!---------------------- ATRAS ------------------------------------>
       <ion-back-button class="back-button" defaultHref="ln">
-      <ion-icon name="arrow-back"></ion-icon> </ion-back-button>
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-back-button>
       <!---------------------- ATRAS ------------------------------------>
 
       <!------------------------ T REGISTRAR ---------------------------->
-      <P class="shiny-text"> REGISTRAR </P>
+      <p class="shiny-text">REGISTRAR</p>
       <!------------------------ T REGISTRAR ---------------------------->
 
-      
-      
-      <!-------------------------CAMPOS DE TEXTO------------------------->
-      <div class="form-control">
-        <input type="text" required="" [(ngModel)]="nombre">
-        <label>
+      <!-------------------------FORMULARIO------------------------->
+      <form [formGroup]="formularioRegistro"> <!-- Vinculamos el formulario al FormGroup -->
+        <div class="form-control">
+          <input type="text" formControlName="nombre" required>
+          <label>
             <span style="transition-delay:0ms">N</span>
             <span style="transition-delay:50ms">O</span>
             <span style="transition-delay:100ms">M</span>
             <span style="transition-delay:150ms">B</span>
             <span style="transition-delay:200ms">R</span>
             <span style="transition-delay:250ms">E</span>
-        </label>
-      </div>
-      <div class="form-control">
-        <input type="email" required="" [(ngModel)]="email">
-        <label>
+          </label>
+        </div>
+
+        <div class="form-control">
+          <input type="email" formControlName="email" required>
+          <label>
             <span style="transition-delay:0ms">E</span>
             <span style="transition-delay:50ms">M</span>
             <span style="transition-delay:100ms">A</span>
             <span style="transition-delay:150ms">I</span>
             <span style="transition-delay:200ms">L</span>
-        </label>
-      </div>
-      <div class="form-control">
-        <input type="password" required="" [(ngModel)]="password">
-        <label>
-            <span style="transition-delay:0ms">C</span>
-            <span style="transition-delay:50ms">O</span>
-            <span style="transition-delay:100ms">N</span>
-            <span style="transition-delay:150ms">T</span>
-            <span style="transition-delay:200ms">R</span>
-            <span style="transition-delay:250ms">A</span>
-            <span style="transition-delay:300ms">S</span>
-            <span style="transition-delay:350ms">E</span>
-            <span style="transition-delay:400ms">Ñ</span>
-            <span style="transition-delay:450ms">A</span>
-        </label>
-      </div>
-      <div class="form-control">
-        <input type="password" required="" [(ngModel)]="confirmacion">
-        <label>
-            <span style="transition-delay:0ms">C</span>
-            <span style="transition-delay:50ms">O</span>
-            <span style="transition-delay:100ms">N</span>
-            <span style="transition-delay:150ms">F</span>
-            <span style="transition-delay:200ms">I</span>
-            <span style="transition-delay:250ms">R</span>
-            <span style="transition-delay:300ms">M</span>
-            <span style="transition-delay:350ms">A</span>
-            <span style="transition-delay:400ms">C</span>
-            <span style="transition-delay:450ms">I</span>
-            <span style="transition-delay:500ms">Ó</span>
-            <span style="transition-delay:550ms">N</span>
-        </label>
-      </div>
-      <!-------------------------CAMPOS DE TEXTO------------------------->
+          </label>
+        </div>
+
+        <div class="form-control">
+          <input type="password" formControlName="password" required>
+          <label>
+            <span style=>Password</span>
+          </label>
+        </div>
+
+        <div class="form-control">
+          <input type="password" formControlName="Confirmacion" required>
+          <label>
+            <span style=>Reingrese Password</span>
+          </label>
+        </div>
+      </form>
+      <!-------------------------FORMULARIO------------------------->
+
     </div>
   </div>
-<!-------------------------EL GRAN DIV--------------------------->
 
-
-
-
-
-<!-------------------------BOTON INGRESAR--------------------------->
+  <!-------------------------BOTON INGRESAR--------------------------->
   <button class="buttonTL" (click)="ingresar()"> INGRESAR </button>
+  <!-------------------------BOTON INGRESAR--------------------------->
 </ion-content>
-<!-------------------------BOTON INGRESAR--------------------------->

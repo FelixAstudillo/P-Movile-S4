@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AlertController, ToastController } from '@ionic/angular';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-re',
@@ -9,55 +10,54 @@ import { AlertController, ToastController } from '@ionic/angular';
 })
 export class RePage implements OnInit {
 
+  formularioRegistro: FormGroup;
 
-
-  nombre : string =""
-  email : string =""
-  password : string = ""
-  confirmacion : string =""
-
-
-  constructor(public mensaje:ToastController,public alerta:AlertController, private router:Router) { }
-//Mensajito Error compañero:
-  async MensajeError() {
-    const alert = await this.alerta.create({
-      header: '¡ALTO AHÍ!',
-//    subHeader: 'Contraseña o usuario erroneo',
-      message: 'Ningun campo de texto debe estar vacío',
-      buttons: ['GRACIAS']
+  constructor(public fb: FormBuilder, public alerta: AlertController, private router: Router) { 
+    this.formularioRegistro = this.fb.group({
+      'nombre': new FormControl("", Validators.required),
+      'email': new FormControl("", [Validators.required, Validators.email]),
+      'password': new FormControl("", Validators.required),
+      'confirmacion': new FormControl("", Validators.required)
     });
-
-    await alert.present();
-  }
-//Mensaje Correcto:
-  async MensajeCorrecto() {
-    const toast = await this.mensaje.create({
-      message: 'Inicio de session exitoso ',
-      duration: 2000
-    });
-    toast.present();
   }
 
+  ngOnInit() {}
 
+  async ingresar() {
+    if (this.formularioRegistro.invalid) {
+      const alert = await this.alerta.create({
+        header: 'Datos Incompletos',
+        message: 'Tienes que llenar todos los datos correctamente.',
+        buttons: ['Aceptar']
+      });
 
-
-  ingresar(){
-    if ( this.nombre ==="" || this.email ==="" || this.password==="" || this.confirmacion ===""){
-      this.MensajeError()
+      await alert.present();
+      return; 
     }
-    else{
-      this.MensajeCorrecto()
-      this.router.navigate(["/ln"])
 
+ 
+    if (this.formularioRegistro.value.password !== this.formularioRegistro.value.confirmacion) {
+      const alert = await this.alerta.create({
+        header: 'Error',
+        message: 'La contraseña y la confirmación no coinciden.',
+        buttons: ['Aceptar']
+      });
+
+      await alert.present();
+      return; 
     }
+
+
+    var f = this.formularioRegistro.value;
+
+
+    var usuario = {
+      nombre: f.nombre,
+      email: f.email,
+      password: f.password
+    }
+
+    
+    localStorage.setItem('usuario', JSON.stringify(usuario));
   }
-
-
-
-
-
-
-  ngOnInit() {
-  }
-
 }
